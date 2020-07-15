@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/products": {
+    "/orders": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find all the orders's records",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve orders document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Product"
+                    "$ref": "#/components/schemas/Orders"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Product"
+          "Orders"
         ],
         "parameters": [
           {
@@ -194,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new record",
+        "description": "Create a new orders record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve orders document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Product"
+                  "$ref": "#/components/schemas/Orders"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Product"
+          "Orders"
         ],
         "requestBody": {
           "description": "",
@@ -247,20 +247,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewProduct"
+                "$ref": "#/components/schemas/NewOrders"
               }
             }
           }
         }
       }
     },
-    "/products/count": {
+    "/orders/count": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Retrieve the numver of orders documents",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve orders document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -306,22 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Product"
+          "Orders"
         ],
         "parameters": []
       }
     },
-    "/products/{id}": {
+    "/orders/{id}": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find one orders record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve orders document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Product"
+                  "$ref": "#/components/schemas/Orders"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Product"
+          "Orders"
         ],
         "parameters": [
           {
@@ -376,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a record",
+        "description": "Update a single orders record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve orders document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Product"
+                  "$ref": "#/components/schemas/Orders"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Product"
+          "Orders"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewProduct"
+                "$ref": "#/components/schemas/NewOrders"
               }
             }
           }
@@ -449,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a record",
+        "description": "Delete a single orders record",
         "responses": {
           "200": {
-            "description": "deletes a single record based on the ID supplied",
+            "description": "deletes a single orders based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Product"
+          "Orders"
         ],
         "parameters": [
           {
@@ -514,39 +514,25 @@
   },
   "components": {
     "schemas": {
-      "Product": {
+      "Orders": {
         "required": [
           "id",
-          "name"
+          "orderNumber"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "name": {
+          "orderNumber": {
             "type": "string"
           },
-          "description": {
+          "Recipient": {
             "type": "string"
           },
-          "amount": {
-            "type": "string"
-          },
-          "productCode": {
-            "type": "string"
-          },
-          "quantity": {
-            "type": "string"
-          },
-          "Image": {
+          "products": {
             "required": [
               "id",
-              "name",
-              "hash",
-              "mime",
-              "size",
-              "url",
-              "provider"
+              "name"
             ],
             "properties": {
               "id": {
@@ -555,70 +541,37 @@
               "name": {
                 "type": "string"
               },
-              "alternativeText": {
+              "description": {
                 "type": "string"
               },
-              "caption": {
+              "amount": {
                 "type": "string"
               },
-              "width": {
-                "type": "integer"
-              },
-              "height": {
-                "type": "integer"
-              },
-              "formats": {
-                "type": "object"
-              },
-              "hash": {
+              "productCode": {
                 "type": "string"
               },
-              "ext": {
+              "quantity": {
                 "type": "string"
               },
-              "mime": {
-                "type": "string"
-              },
-              "size": {
-                "type": "number"
-              },
-              "url": {
-                "type": "string"
-              },
-              "previewUrl": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "provider_metadata": {
-                "type": "object"
-              },
-              "related": {
+              "Image": {
                 "type": "string"
               }
             }
           }
         }
       },
-      "NewProduct": {
+      "NewOrders": {
         "required": [
-          "name"
+          "orderNumber"
         ],
         "properties": {
-          "name": {
+          "orderNumber": {
             "type": "string"
           },
-          "description": {
+          "Recipient": {
             "type": "string"
           },
-          "amount": {
-            "type": "string"
-          },
-          "productCode": {
-            "type": "string"
-          },
-          "quantity": {
+          "products": {
             "type": "string"
           }
         }
@@ -627,7 +580,7 @@
   },
   "tags": [
     {
-      "name": "Product"
+      "name": "Orders"
     }
   ]
 }
