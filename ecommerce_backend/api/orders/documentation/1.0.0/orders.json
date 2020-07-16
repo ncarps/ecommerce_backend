@@ -516,8 +516,7 @@
     "schemas": {
       "Orders": {
         "required": [
-          "id",
-          "orderNumber"
+          "id"
         ],
         "properties": {
           "id": {
@@ -526,7 +525,7 @@
           "orderNumber": {
             "type": "string"
           },
-          "Recipient": {
+          "receipientName": {
             "type": "string"
           },
           "products": {
@@ -561,14 +560,11 @@
         }
       },
       "NewOrders": {
-        "required": [
-          "orderNumber"
-        ],
         "properties": {
           "orderNumber": {
             "type": "string"
           },
-          "Recipient": {
+          "receipientName": {
             "type": "string"
           },
           "products": {

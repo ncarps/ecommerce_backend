@@ -10,12 +10,9 @@
   },
   "attributes": {
     "orderNumber": {
-      "type": "string",
-      "private": false,
-      "required": true,
-      "unique": true
+      "type": "string"
     },
-    "Recipient": {
+    "receipientName": {
       "type": "string"
     },
     "products": {
