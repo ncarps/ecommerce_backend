@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "07/16/2020 2:29:26 PM"
+    "x-generation-date": "07/17/2020 5:41:06 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -3242,7 +3242,8 @@
           "products": {
             "required": [
               "id",
-              "name"
+              "name",
+              "productCode"
             ],
             "properties": {
               "id": {
@@ -3286,7 +3287,8 @@
       "Product": {
         "required": [
           "id",
-          "name"
+          "name",
+          "productCode"
         ],
         "properties": {
           "id": {
@@ -3372,7 +3374,8 @@
       },
       "NewProduct": {
         "required": [
-          "name"
+          "name",
+          "productCode"
         ],
         "properties": {
           "name": {

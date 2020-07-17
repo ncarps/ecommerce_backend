@@ -531,7 +531,8 @@
           "products": {
             "required": [
               "id",
-              "name"
+              "name",
+              "productCode"
             ],
             "properties": {
               "id": {
