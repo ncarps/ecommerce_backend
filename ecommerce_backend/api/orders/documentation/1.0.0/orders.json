@@ -532,7 +532,8 @@
             "required": [
               "id",
               "name",
-              "productCode"
+              "productCode",
+              "category"
             ],
             "properties": {
               "id": {
@@ -544,19 +545,38 @@
               "description": {
                 "type": "string"
               },
-              "amount": {
+              "price": {
                 "type": "string"
               },
               "productCode": {
                 "type": "string"
               },
-              "quantity": {
-                "type": "string"
-              },
               "Image": {
                 "type": "string"
+              },
+              "sale": {
+                "type": "boolean"
+              },
+              "discounted": {
+                "type": "boolean"
+              },
+              "category": {
+                "type": "string"
+              },
+              "availability": {
+                "type": "boolean"
               }
             }
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "confirmed",
+              "in_transit",
+              "delivered",
+              "complete"
+            ]
           }
         }
       },
@@ -570,6 +590,16 @@
           },
           "products": {
             "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "confirmed",
+              "in_transit",
+              "delivered",
+              "complete"
+            ]
           }
         }
       }

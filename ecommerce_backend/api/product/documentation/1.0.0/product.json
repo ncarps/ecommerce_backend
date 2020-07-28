@@ -518,7 +518,8 @@
         "required": [
           "id",
           "name",
-          "productCode"
+          "productCode",
+          "category"
         ],
         "properties": {
           "id": {
@@ -530,13 +531,10 @@
           "description": {
             "type": "string"
           },
-          "amount": {
+          "price": {
             "type": "string"
           },
           "productCode": {
-            "type": "string"
-          },
-          "quantity": {
             "type": "string"
           },
           "Image": {
@@ -599,13 +597,34 @@
                 "type": "string"
               }
             }
+          },
+          "sale": {
+            "type": "boolean"
+          },
+          "discounted": {
+            "type": "boolean"
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "food",
+              "beverage",
+              "apparel",
+              "gadgets",
+              "appliances",
+              "furniture"
+            ]
+          },
+          "availability": {
+            "type": "boolean"
           }
         }
       },
       "NewProduct": {
         "required": [
           "name",
-          "productCode"
+          "productCode",
+          "category"
         ],
         "properties": {
           "name": {
@@ -614,14 +633,31 @@
           "description": {
             "type": "string"
           },
-          "amount": {
+          "price": {
             "type": "string"
           },
           "productCode": {
             "type": "string"
           },
-          "quantity": {
-            "type": "string"
+          "sale": {
+            "type": "boolean"
+          },
+          "discounted": {
+            "type": "boolean"
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "food",
+              "beverage",
+              "apparel",
+              "gadgets",
+              "appliances",
+              "furniture"
+            ]
+          },
+          "availability": {
+            "type": "boolean"
           }
         }
       }

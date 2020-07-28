@@ -17,6 +17,16 @@
     },
     "products": {
       "collection": "product"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "confirmed",
+        "in_transit",
+        "delivered",
+        "complete"
+      ]
     }
   }
 }

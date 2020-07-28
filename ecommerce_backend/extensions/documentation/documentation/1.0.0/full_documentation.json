@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "07/17/2020 5:41:06 PM"
+    "x-generation-date": "07/28/2020 12:25:26 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -3243,7 +3243,8 @@
             "required": [
               "id",
               "name",
-              "productCode"
+              "productCode",
+              "category"
             ],
             "properties": {
               "id": {
@@ -3255,19 +3256,38 @@
               "description": {
                 "type": "string"
               },
-              "amount": {
+              "price": {
                 "type": "string"
               },
               "productCode": {
                 "type": "string"
               },
-              "quantity": {
-                "type": "string"
-              },
               "Image": {
                 "type": "string"
+              },
+              "sale": {
+                "type": "boolean"
+              },
+              "discounted": {
+                "type": "boolean"
+              },
+              "category": {
+                "type": "string"
+              },
+              "availability": {
+                "type": "boolean"
               }
             }
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "confirmed",
+              "in_transit",
+              "delivered",
+              "complete"
+            ]
           }
         }
       },
@@ -3281,6 +3301,16 @@
           },
           "products": {
             "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "confirmed",
+              "in_transit",
+              "delivered",
+              "complete"
+            ]
           }
         }
       },
@@ -3288,7 +3318,8 @@
         "required": [
           "id",
           "name",
-          "productCode"
+          "productCode",
+          "category"
         ],
         "properties": {
           "id": {
@@ -3300,13 +3331,10 @@
           "description": {
             "type": "string"
           },
-          "amount": {
+          "price": {
             "type": "string"
           },
           "productCode": {
-            "type": "string"
-          },
-          "quantity": {
             "type": "string"
           },
           "Image": {
@@ -3369,13 +3397,34 @@
                 "type": "string"
               }
             }
+          },
+          "sale": {
+            "type": "boolean"
+          },
+          "discounted": {
+            "type": "boolean"
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "food",
+              "beverage",
+              "apparel",
+              "gadgets",
+              "appliances",
+              "furniture"
+            ]
+          },
+          "availability": {
+            "type": "boolean"
           }
         }
       },
       "NewProduct": {
         "required": [
           "name",
-          "productCode"
+          "productCode",
+          "category"
         ],
         "properties": {
           "name": {
@@ -3384,14 +3433,31 @@
           "description": {
             "type": "string"
           },
-          "amount": {
+          "price": {
             "type": "string"
           },
           "productCode": {
             "type": "string"
           },
-          "quantity": {
-            "type": "string"
+          "sale": {
+            "type": "boolean"
+          },
+          "discounted": {
+            "type": "boolean"
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "food",
+              "beverage",
+              "apparel",
+              "gadgets",
+              "appliances",
+              "furniture"
+            ]
+          },
+          "availability": {
+            "type": "boolean"
           }
         }
       },

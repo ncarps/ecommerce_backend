@@ -17,16 +17,13 @@
     "description": {
       "type": "richtext"
     },
-    "amount": {
+    "price": {
       "type": "string"
     },
     "productCode": {
       "type": "string",
       "unique": true,
       "required": true
-    },
-    "quantity": {
-      "type": "string"
     },
     "Image": {
       "model": "file",
@@ -36,6 +33,27 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "sale": {
+      "type": "boolean"
+    },
+    "discounted": {
+      "type": "boolean"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "food",
+        "beverage",
+        "apparel",
+        "gadgets",
+        "appliances",
+        "furniture"
+      ],
+      "required": true
+    },
+    "availability": {
+      "type": "boolean"
     }
   }
 }
